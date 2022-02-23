@@ -1,0 +1,78 @@
+extends ../layouts/header_footer.pug
+block content
+  link(rel='stylesheet', href='/css/shop/productdetail.css')
+  .pd-wrap
+    .container
+      .heading-section
+      .row
+        .col-md-6
+          #slider.product-slider
+            .item
+              img#product-img(src=`${product.img[0]}` style='width:100%')
+          .product-thumb
+            each img in product.img
+              .item
+                img.product-img-item(src=`${img}`)
+        .col-md-6
+          .product-dtl
+            .product-info
+              .product-name #{product.name}
+              input(type="hidden" id = 'product_id' value=`${product.id}`)
+              .reviews-counter
+                .brand-name
+  
+                  | Loại sản phẩm: 
+                  a(href=`/product?category=${product.category.id}`) #{product.category.name}
+                  span.columm
+                  |  NSX: 
+                  a(href=`/product?provider=${product.provider.id}`) #{product.provider.name}
+                .rate
+                  each val in [5, 4, 3, 2, 1]
+                    if stars_value==val
+                      input(id=`star${val}` type='radio', name='rate', value=val checked)
+                      label(for=`star${val}`, title='text') #{val} stars
+                    else
+                      input(id=`star${val}` type='radio', name='rate', value=val )
+                      label(for=`star${val}`, title='text') #{val} stars
+              .brand-name#result-rate 
+              .product-price-discount
+                span #{product.price} 
+                span  vnd
+                //- span.line-through $29.00
+            .break-row
+              p
+                | #{product.description}
+            .product-count
+              //- label(for='size') Quantity
+              //- form.display-flex(action='#')
+              //-   .qtyminus -
+              //-   input.qty(type='text', name='quantity', value='1')
+              //-   .qtyplus +
+              span.round-white-btn#buynow_btn Mua Ngay
+              span.round-black-btn#addtocart_btn Thêm v&agrave;o gi&#x1ECF; h&agrave;ng
+      .product-info-tabs
+        ul#myTab.nav.nav-tabs(role='tablist')
+          li.nav-item
+            a#description-tab.nav-link.active(data-toggle='tab', href='#description', role='tab', aria-controls='description', aria-selected='true') Description
+          li.nav-item
+            a#review-tab.nav-link(data-toggle='tab', href='#review', role='tab', aria-controls='review', aria-selected='false') Reviews
+        #myTabContent.tab-content
+          #description.tab-pane.fade.show.active(role='tabpanel', aria-labelledby='description-tab')
+            | #{product.description}
+          #review.tab-pane.fade(role='tabpanel', aria-labelledby='review-tab')
+            .review-heading Bình luận
+            .review-form
+              .form-group
+                label Lời nhắn
+                textarea#txtreview.form-control(rows='3')
+              span.round-blacks-btn#btn-send-msg Gửi
+            .incoming_msg
+              if(msg)
+                each item in msg
+                  .received_msg
+                    .received_withd_msg
+                      span.name #{item.user.name}
+                      p.msg_content #{item.message}
+                      span.time_date  #{item.datestr}
+
+  script(src="/js/shop/productdetail.js") 

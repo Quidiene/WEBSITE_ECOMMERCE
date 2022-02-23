@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="add.css">
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+    integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="information.css">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+  <link rel="stylesheet" type="text/css"
+    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="mySidenav" class="sidenav">
+    <p class="logo">KTQ</p>
+    <a href="#" class="icon-a"><i class="fa fa-dashboard icons"></i> &nbsp;&nbsp;Thống kê</a>
+    <a href="#" class="icon-a"><i class="fa fa-users icons"></i> &nbsp;&nbsp;Quản lý khách hàng</a>
+    <a href="#" class="icon-a"><i class="fa fa-shopping-bag icons"></i> &nbsp;&nbsp;Quản lý hóa đơn</a>
+    <a href="#" class="icon-a"><i class="fa fa-tasks icons"></i> &nbsp;&nbsp;Quản lý nguồn hàng</a>
+    <a href="#" class="icon-a"><i class="fa fa-user icons"></i> &nbsp;&nbsp;Tài khoản</a>
+
+  </div>
+
+
+  <div class="app-content">
+    <div id = "main">
+      <div class="app-title">
+        <ul class="app-breadcrumb breadcrumb">
+            <li class="breadcrumb-item">Danh sách sản phẩm</li>
+            <li class="breadcrumb-item"><a href="#">Thêm sản phẩm</a></li>
+        </ul>
+      </div>
+  
+      <div class="row">
+        <div class="col-md-12">
+          <div class="tile">
+            <h3 class="tile-title">Tạo mới sản phẩm</h3>
+            <div class="row element-button">
+              <div class="col-sm-2">
+                <a class="btn btn-add btn-sm" data-toggle="modal" data-target="#exampleModalCenter"><i
+                    class="fas fa-folder-plus"></i> Thêm nhà cung cấp</a>
+              </div>
+              <div class="col-sm-2">
+                <a class="btn btn-add btn-sm" data-toggle="modal" data-target="#adddanhmuc"><i
+                    class="fas fa-folder-plus"></i> Thêm danh mục</a>
+              </div>
+              <div class="col-sm-2">
+                <a class="btn btn-add btn-sm" data-toggle="modal" data-target="#addtinhtrang"><i
+                    class="fas fa-folder-plus"></i> Thêm tình trạng</a>
+              </div>
+            </div>
+  
+            <form action="" method="post">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label class="control-label">Tên sản phẩm </label>
+                    <input class="form-control" name="Name" type="text" placeholder="">
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label class="control-label">Số lượng</label>
+                    <input class="form-control" name="Quantity" type="number">
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label class="control-label">Tình trạng</label>
+                    <select class="form-control" name = "status">
+                      <option>-- Chọn tình trạng --</option>
+                      <option>Còn hàng</option>
+                      <option>Hết hàng</option>
+                    </select>                </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label class="control-label">Loại sản phẩm</label>
+                    <select class="form-control" name = "category">
+                      <option>-- Chọn loại sản phẩm --</option>
+                      <option>Máy tính</option>
+                      <option>Điện Thoại</option>
+                      <option>Máy tính bảng</option>
+                      <option>Tai nghe</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label class="control-label">Nhà Cung Cấp</label>
+                    <select class="form-control" name ="provider">
+                      <option>-- Chọn nhà cung cấp --</option>
+                      <option>Phong vũ</option>
+                      <option>Thế giới di động</option>
+                      <option>FPT</option>
+                      <option>Võ Trường</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label class="control-label">Giá Bán</label>
+                    <input class="form-control" name="Price" type="text">
+                  </div>
+                </div>
+  
+  
+              </div>
+            </form>
+  
+  
+            <div class="picture">
+              <div class="control-label"><h3>Ảnh sản phẩm</h3></div>
+              <label id='avatar_lb' for="avatar"><span>Chọn ảnh để up <i
+                    class="fas fa-cloud-upload-alt"></i></span></label>
+  
+              <input type="file" id="avatar" value='' name="avatar" onchange="fileupload(event)"
+                accept="image/png, image/jpeg" multiple>
+              <div id="img_list">
+              </div>
+            
+            </div>
+            
+            <!-- motasanpham -->
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label class="control-label">Mô tả sản phẩm</label>
+                  <input class="form-control-des" name="Description" type="text">
+                </div>
+              </div>
+            </div>
+  
+            <div class="buton">
+              <button class="btn btn-outline-success" type="button">Lưu lại</button>
+              <a class="btn btn-outline-danger" href="#">Hủy bỏ</a>
+            </div>
+  
+          </div>
+          
+        </div>
+  
+      
+      </div>
+    </div>
+
+    <script>
+      function fileupload(event) {
+        let files = Array.from(event.target.files)
+        let avatar = document.getElementById('avatar')
+        var img = document.getElementById('temp_img')
+        let list_img = files.reduce((pre, cur) => {
+          return `${pre}<img id = 'temp_img' src = "${URL.createObjectURL(cur)}" alt = "" height = "100px" >`
+        }, ``)
+        let img_list = document.getElementById('img_list')
+        img_list.innerHTML = list_img
+        console.log(list_img)
+      }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="add.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <div id="mySidenav" class="sidenav">
+        <p class="logo">KTQ</p>
+        <a href="#" class="icon-a"><i class="fa fa-dashboard icons"></i> &nbsp;&nbsp;Thống kê</a>
+        <a href="#" class="icon-a"><i class="fa fa-users icons"></i> &nbsp;&nbsp;Khách hàng</a>
+        <a href="#" class="icon-a"><i class="fa fa-shopping-bag icons"></i> &nbsp;&nbsp;Hóa đơn</a>
+        <a href="#" class="icon-a"><i class="fa fa-tasks icons"></i> &nbsp;&nbsp;nguồn hàng</a>
+        <a href="#" class="icon-a"><i class="fa fa-user icons"></i> &nbsp;&nbsp;Tài khoản</a>
+        
+    
+
+    </div>
+
+    <div id="main">
+        <div class="app-title">
+            <ul class="app-breadcrumb breadcrumb">
+                <li class="breadcrumb-item"> Thống kê</li>
+                <div id = "time" class="ontime"></div>
+            </ul>
+          
+          </div>
+
+
+        <div class="square-4">
+            <div class="col-3">
+                <div class="das">
+                    <div class="square">
+                        <p>67<br/><span>Customers</span></p>
+                        <i class="fa fa-users box-icon"></i>
+                    </div>
+                </div>
+    
+            </div>
+    
+            <div class="col-3">
+                <div class="das">
+                    <div class="square">
+                        <p>67<br/><span>Customers</span></p>
+                        <i class="fa fa-users box-icon"></i>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-3">
+                <div class="das">
+                    <div class="square">
+                        <p>67<br/><span>Customers</span></p>
+                        <i class="fa fa-users box-icon"></i>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-3">
+                <div class="das">
+                    <div class="square">
+                        <p>67<br/><span>Customers</span></p>
+                        <i class="fa fa-users box-icon"></i>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- add-chart -->
+        <div class="graphbox">
+
+            <div class="box">
+                <canvas id="myChart" height="300px"></canvas>
+            </div>
+            <div class="box">
+                <canvas id="earning" ></canvas>
+            </div>
+        </div>
+        <div class="graphbox">
+
+            <div class="box">
+                <canvas id="myChart" height="300px"></canvas>
+            </div>
+            <div class="box">
+                <canvas id="earning" ></canvas>
+            </div>
+        </div>
+
+        
+
+
+        
+    </div>
+
+
+    <script>
+         function thoiGian() {
+             var today = new Date();
+             var ngay = ["Chủ nhật", "Thứ hai", "Thứ ba", "Thứ tư", "Thứ năm", "Thứ sáu", "Thứ bảy",];
+             var thang = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
+             var gio = today.getHours();
+             var phut = today.getMinutes();
+             var giay = today.getSeconds();
+             setTimeout("thoiGian()", 1000)
+             document.getElementById('time').innerHTML = ngay[today.getDay()]+", "+ today.getDate() +"/"+ thang[today.getMonth()]+"/"+today.getFullYear()+" - " + gio + " giờ " + phut + " phút " + giay + " giây";
+         }
+         thoiGian();
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+    <script src="chart.js"></script>
+
+</body>
+
+</html>

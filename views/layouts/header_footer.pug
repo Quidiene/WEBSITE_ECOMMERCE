@@ -1,0 +1,175 @@
+doctype html
+head
+  link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm', crossorigin='anonymous')
+  link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css', integrity='sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==', crossorigin='anonymous', referrerpolicy='no-referrer')
+  link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css")
+  link(rel='stylesheet', href='/css/shop/header_footer.css')
+
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible', content='IE=edge')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  title Thi&#x1EBF;t B&#x1ECB; &Dstrok;i&#x1EC7;n T&#x1EED; KTQ
+body
+  //- facebook chat
+  #fb-root
+  #fb-customer-chat.fb-customerchat
+  //- end facebook chat
+  //- modal
+  link(rel="stylesheet", href="/css/shop/modal.css")
+  #Modal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel', aria-hidden='true')
+    .modal-dialog(role='document')
+        .modal-content
+            .modal-header
+                h5#ModalLabel.modal-title Modal title
+                button.close(type='button', data-dismiss='modal', aria-label='Close')
+                    span(aria-hidden='true') &times;
+            #modalMsg.modal-body
+            .modal-footer
+                button.btn.btn-danger(type='button', data-dismiss='modal') Đóng
+  
+  //- modal
+  //- header
+  .header
+    .header--top
+      .container.header--top--inner
+        if(user)
+          a.header--top--item(href='/logout')
+            
+            span.icon-text Đăng xuất
+        else
+          a.header--top--item(href='/login')
+           
+            span.icon-text Đăng nhập
+    .header--bottom
+      .container.header--bottom--inner
+        .row
+          .bottom--inner--left.col-2
+            a.brand(href='/')
+              img.img(height='80px', src='https://upanh.cf/er047intj9.gif', alt='')
+              span KTQ
+          .bottom--inner--center.col-8.col-lg-4
+            input.form-control(id='search_input', type='text', placeholder='Tìm gì ghi vô')
+            span.search_btn#search_btn
+              i.fas.fa-search
+          .phone-menu-container.col-2
+            i.fas.fa-align-justify#phone-menu
+          .col-12.col-lg-6#phone-menu-data
+            .bottom--inner--right
+              a.inner--right--item(href='https://www.facebook.com/KTQ-shop-223488363019229')
+                i.fas.fa-tag.icon
+                .icon-text Liên hệ
+              a.inner--right--item(href='/account/Order')
+                i.far.fa-clipboard.icon
+                .icon-text &Dstrok;&#x1A1;n h&agrave;ng
+              //- a.inner--right--item(href='#')
+              //-   i.far.fa-bell.icon
+              //-   .icon-text Thông báo
+              a.inner--right--item(href='/account')
+                i.fas.fa-user-circle.icon
+                .icon-text Tài khoản
+              a.inner--right--item(href='/cart')
+                i.fas.fa-shopping-cart.icon
+                .icon-text Gi&#x1ECF; h&agrave;ng      
+            
+  //-end header
+  //- content
+  block content
+  //- end content
+  //- footer
+  .container-fluid.bg-newletter.wow.fadeInUp
+    .container.newletter
+      .row
+        .col-xl-7.col-lg-6.col-md-6.col-sm-12.newletter-title
+          i.fa.fa-sign-in
+          span Đăng kí nhận thông tin
+        .col-xl-5.col-lg-6.col-md-6.col-sm-12.newletter-content
+          input(type='email', placeholder='Your email address')
+          button Xác Nhận
+  .container.footer.wow.fadeInUp
+    .row
+      .col-xl-3.col-lg-3.col-md-12.col-sm-12.col-xs-12.footer-column.about-ft
+        .ttfooter-logo
+          a(href='/')
+            img(src='https://upanh.cf/er047intj9.gif' height='50px', alt='footer-logo')
+        .ttfooter-desc Claritas processus Lorem ipsum dynamicus recmicus sequit qituconsut.
+      .col-xl-3.col-lg-3.col-md-4.col-sm-3.col-xs-6.footer-column.footer-extras
+        h5.list-title Ưu đãi
+        ul.list-unstyled
+          li
+            a(href='#') Trung tâm bảo hành
+          li
+            a(href='#') Thanh toán online
+          li
+            a(href='#') Dịch vụ sữa chữa
+          li
+            a(href='#') Hướng dẫn đặt hàng
+
+      .col-sm-3.col-lg-3.col-md-4.col-sm-4.col-xs-6.footer-column.footer-my-account
+        h5.list-title Thông tin
+        ul.list-unstyled
+          li
+            a(href='/account') Tài khoản
+          li
+            a(href='/account/order') lịch sử đơn
+
+      .col-xl-3.col-lg-3.col-md-4.col-sm-5.col-xs-6.footer-column.footer-store-info
+        h5.list-title Thông tin chúng tôi
+        ul.list-unstyled
+          li.contact-detail
+            .data.address
+              i.fa.fa-map-marker
+              .contact-address
+                | KTQ
+                br
+                | Việt Nam
+          li.contact
+            .data.contact
+              i.fa.fa-phone
+              span.phone
+                a(href='#') 0123456789
+          li.fax
+            .data.fax
+              i.fa.fa-fax
+              span.fax-address
+                a(href='#') 0123-456-7890
+          li.email
+            .data.email
+              i.fa.fa-envelope
+              span.email-address
+                a(href='mailto:demo@gmail.com') demo@gmail.com
+  .footer-bottom.wow.fadeInUp
+    .container
+      .footer-bottom-link
+        p
+          | Ni&ecirc;n Lu&#x1EAD;n &copy; 2021 
+          span  Tu&#x1EA5;n - Kh&#x1EA3;i - Qu&iacute; 
+      .follow
+        ul.list-unstyled
+          li.facebook
+            a._blank(title='Facebook', href='#', target='_blank')
+              i.fa.fa-facebook
+          li.twitter
+            a._blank(title='Twitter', href='#', target='_blank')
+              i.fa.fa-twitter
+          li.rss
+            a._blank(title='RSS', href='#', target='_blank')
+              i.fa.fa-rss
+          li.google-plus
+            a._blank(title='Google Plus', rel='publisher', href='#', target='_blank')
+              i.fa.fa-google-plus
+          li.instagram
+            a._blank(title='instagram', rel='publisher', href='#', target='_blank')
+              i.fa.fa-instagram(aria-hidden='true')
+  #goToTop.goToTop.ttbox-img(title='Top', style='display: block;' href="#")
+  #modal-manage.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalLongTitle', aria-hidden='true')
+    .modal-dialog(role='document')
+      .modal-content
+        #modal-header.modal-header.hover-pointer
+        #modal-body.modal-body
+        #modal-footer.modal-footer
+  script(src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous")
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q', crossorigin='anonymous')
+  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js', integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl', crossorigin='anonymous')
+  script(src='https://kit.fontawesome.com/3405ce9d87.js', crossorigin='anonymous')
+  script(src="/js/shop/header_footer.js") 
+  //- end footer
